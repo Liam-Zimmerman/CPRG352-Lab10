@@ -37,6 +37,7 @@ public class AuthenticationFilter implements Filter {
             httpResponse.sendRedirect("login");
             return;
         }
+        
         // This will call upon either the nex filter in the chain or 
         // or it will load the requested servlet.
         chain.doFilter(request, response);
