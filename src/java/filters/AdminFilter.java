@@ -23,9 +23,9 @@ public class AdminFilter implements Filter {
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         HttpSession session = httpRequest.getSession();
         
-        String email = (String) session.getAttribute("email");
+        int roleId = (int) session.getAttribute("roleId");
         
-        if(!email.equals("cprg352+admin@gmail.com"))
+        if(roleId != 1)
         {
             HttpServletResponse httpResponse = (HttpServletResponse) response;
             httpResponse.sendRedirect("notes");
